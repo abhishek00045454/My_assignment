@@ -1,0 +1,749 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOUN3dnwLovMsfur2xVcqdu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/abhishek00045454/My_assignment/blob/abhishek00045454-patch-1/main_oops_2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vssIPVqjyHjM",
+        "outputId": "ff64baba-b44f-4cbc-8228-3fca46dd2782"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "outer\n",
+            "inner class\n",
+            "InnerInner class\n",
+            "nested Inner class method\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Outer:\n",
+        "  def __init__(self):\n",
+        "    print(\"outer\")\n",
+        "  class Inner:\n",
+        "    def __init__(self):\n",
+        "      print(\"inner class\")\n",
+        "    class InnerInner:\n",
+        "      def __init__(self):\n",
+        "        print(\"InnerInner class\")\n",
+        "      @staticmethod\n",
+        "      def m1():\n",
+        "        print(\"nested Inner class method\")\n",
+        "\n",
+        "o=Outer().Inner().InnerInner().m1()\n",
+        "\n",
+        "    "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#single_inheritance\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QXhFKYp-2Y2i",
+        "outputId": "337301be-98ac-4ac4-b5f2-da7bf4953cd3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Your name is : Abhishek saini\n",
+            "Your marks is : 101\n",
+            "Your phone is : 98998989899\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class P:\n",
+        "  @staticmethod\n",
+        "  def m1():\n",
+        "    print(\"hello\")\n",
+        "class Q(P):\n",
+        "  @staticmethod\n",
+        "  def m2():\n",
+        "    print(\"hello2\")\n",
+        "t=P().m1()\n",
+        "q=Q().m2()\n"
+      ],
+      "metadata": {
+        "id": "ioiiX5Ya3Jyo",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "079f0923-737a-44be-f3c1-52af6abe1e19"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n",
+            "hello2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#mutile level inhertitance\n",
+        "class P:\n",
+        "  def m1(self):\n",
+        "    print(\"parent method\")\n",
+        "class C(P):\n",
+        "   def m2(self):\n",
+        "     print(\"its contains child method\")\n",
+        "class CC(C):\n",
+        "  def m3(self):\n",
+        "    print(\"its contain child child method\")\n",
+        "c=CC()\n",
+        "c.m1()\n",
+        "c.m2()\n",
+        "c.m3()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t826bfI3A32k",
+        "outputId": "361aa543-9900-4fb8-d640-93552b68c141"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "parent method\n",
+            "its contains child method\n",
+            "its contain child child method\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#hierarchical inheritance -> parents are single but child are many\n",
+        "class P:\n",
+        "  def m1(self):\n",
+        "    print(\"parent method\")\n",
+        "class C1(P):\n",
+        "  def m2(self):\n",
+        "    print(\"child 1 method\")\n",
+        "class C2(P):\n",
+        "  def m3(self):\n",
+        "   print(\"child 2 method\")\n",
+        "\n",
+        "t=C1()\n",
+        "t.m2()\n",
+        "t.m1()\n",
+        "# t.m3()\n",
+        "# q=P().m3()\n",
+        "\"\"\"\n",
+        "in hierarchical inheritance you are aproch by object reference \n",
+        "for above example you see the c1 is only accessable only self and parents \n",
+        "but not approch next c2 instance varible\n",
+        "\"\"\"\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 110
+        },
+        "id": "7Z8XuFXID7iR",
+        "outputId": "c8921c5b-0c70-4861-8c72-0e987ae714a7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "child 1 method\n",
+            "parent method\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'\\nin hierarchical inheritance you are aproch by object reference \\nfor above example you see the c1 is only accessable only self and parents \\nbut not approch next c2 instance varible\\n'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 36
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Mutiple inheritance\n"
+      ],
+      "metadata": {
+        "id": "uWKhfSuNKZOm"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class P1:\n",
+        "  def m1(self):\n",
+        "    print(\"parent  method\")\n",
+        "class P2:\n",
+        "  def m2(self):\n",
+        "    print(\"parents2 method\")\n",
+        "class C1(P1,P2):\n",
+        "  def m3(self):\n",
+        "    print(\"child1 method\")\n",
+        "t=C1()\n",
+        "t.m1()\n",
+        "t.m2()\n",
+        "t.m3()\n",
+        "  "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "s_qUnnEsLL3r",
+        "outputId": "64b81887-859a-4c68-d9c8-3522a2dfa9a5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "parent  method\n",
+            "parents2 method\n",
+            "child1 method\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class P1:\n",
+        "  def m1(self):\n",
+        "    print(\"paretns 1 method\")\n",
+        "class P2:\n",
+        "  def m2(self):\n",
+        "    print(\"parents 2 method\")\n",
+        "class C1(P1,P2):\n",
+        "  def m3(self):\n",
+        "    print(\"its a child 1 method\")\n",
+        "class C2(P2,P1):\n",
+        "  def m4(self):\n",
+        "    print(\"its a child 2 method \")\n",
+        "t=C2()\n",
+        "t.m1()\n",
+        "t.m2()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B4O4BTOiPnKT",
+        "outputId": "ee110a07-f186-49ab-ee62-c2fd303c4d3c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "paretns 1 method\n",
+            "parents 2 method\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class A:\n",
+        "  def m1(self):\n",
+        "    print(\"This is a class A\")\n",
+        "class B(A):\n",
+        "  def m2(self):\n",
+        "    print(\"THis is a class B\")\n",
+        "class C(B):\n",
+        "  def m3(self):\n",
+        "    print(\"This is a Class C\")\n",
+        "class D(C):\n",
+        "  def m4(self):\n",
+        "    print(\"This is a class D\")\n",
+        "class E(D):\n",
+        "  def m5(self):\n",
+        "    print(\"This is a class E\")\n",
+        "\n",
+        "T=E()\n",
+        "T.m1()\n",
+        "T.m2()\n",
+        "T.m3()\n",
+        "T.m4()\n",
+        "T.m5()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "E0-BuC22T9U1",
+        "outputId": "49970043-1454-4634-cf24-8655a35580f9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "This is a class A\n",
+            "THis is a class B\n",
+            "This is a Class C\n",
+            "This is a class D\n",
+            "This is a class E\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Outer:\n",
+        "  def __init__(self):\n",
+        "    print(\"OUtter class\")\n",
+        "  class Inner:\n",
+        "    def __init__(self):\n",
+        "      print(\"inner class\")\n",
+        "    class InnerInneer:\n",
+        "      def __init__(self):\n",
+        "        print(\"inner inner method \")\n",
+        "      def m1(self):\n",
+        "        print(\"nested inner method \")\n",
+        "\n",
+        "t=Outer().Inner().InnerInneer().m1()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zaPs3trWWJ3c",
+        "outputId": "f4c0f190-5720-4c70-a757-501e151601a6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "OUtter class\n",
+            "inner class\n",
+            "inner inner method \n",
+            "nested inner method \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Car:\n",
+        "  def __init__(self,name,model,color):\n",
+        "    self.name=name\n",
+        "    self.model=model\n",
+        "    self.color=color\n",
+        "  def GetInfo(self):\n",
+        "    print(\"car Name:{}\\nModel :{}\\nColor:{}\".format(self.name,self.model,self.color))\n",
+        "\n",
+        "class Employee:\n",
+        "  def __init__(self,ename,eno,car):\n",
+        "    self.ename=ename\n",
+        "    self.eno=eno\n",
+        "    self.car=car\n",
+        "  def EmpInfo(self):\n",
+        "    print(\"Employee name :\",self.ename)\n",
+        "    print(\"Employee Eno:\",self.eno)\n",
+        "    print(\"Emploee Car Info :\")\n",
+        "    self.car.GetInfo()\n",
+        "\n",
+        "t=Car(\"mustag\",1995,\"black\")\n",
+        "\n",
+        "p=Employee(\"Abhishek saini\",101,t)\n",
+        "p.EmpInfo()\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xBW560UGX0fW",
+        "outputId": "d79de154-3e05-4d97-e647-a6fb555984e2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Employee name : Abhishek saini\n",
+            "Employee Eno: 101\n",
+            "Emploee Car Info :\n",
+            "car Name:mustag\n",
+            "Model :1995\n",
+            "Color:black\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\"\"\"\n",
+        "1.composition -> this is stands for containers and contained objects \n",
+        " for example In the collge their are many departments like cse,it,bsc,ece etc\n",
+        " and suppose that the collage is involve in some illegeal activity \n",
+        " so govtment decided to shut down the university and the all collge is shut down \n",
+        " and all the department too so the metaphore is the collage is the container objects \n",
+        " and the department is the contained object so this are strong bond to each other\n",
+        "2. aggregration:-> suppose that the in the collage(container) and the teacher(contained)\n",
+        " they are assiocated with the deparment but somehow the addmission is coing out \n",
+        " so the department is close but the teacher(contained) is not close becoze it study\n",
+        " to the different department so these lossely bond to the container objects is called\n",
+        " aggregration\n",
+        "\"\"\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 221
+        },
+        "id": "iemKDBY8dAwO",
+        "outputId": "3daee420-dfa8-43c0-9904-ec4d5e439433"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'\\n1.composition -> this is stands for containers and contained objects \\n for example In the collge their are many departments like cse,it,bsc,ece etc\\n and suppose that the collage is involve in some illegeal activity \\n so govtment decided to shut down the university and the all collge is shut down \\n and all the department too so the metaphore is the collage is the container objects \\n and the department is the contained object so this are strong bond to each other\\n2. aggregration:-> suppose that the in the collage(container) and the teacher(contained)\\n they are assiocated with the deparment but somehow the addmission is coing out \\n so the department is close but the teacher(contained) is not close becoze it study\\n to the different department so these lossely bond to the container objects is called\\n aggregration\\n'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 87
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#above example\n",
+        "#compostition function  \n",
+        "class University:\n",
+        "  def __init__(self):\n",
+        "    self.dept=self.Department()\n",
+        "  class Department:\n",
+        "    def __init__(self):\n",
+        "      print(\"hello\")\n",
+        "u=University()  \n",
+        "#aggregration\n",
+        "class Professor:\n",
+        "  pass\n",
+        "class Department:\n",
+        "  def __init__(self,professor):\n",
+        "    self.professor=professor\n",
+        "professor=Professor()\n",
+        "csdept=Department(professor)\n",
+        "itdept=Department(professor)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YEiaje9yvBwl",
+        "outputId": "3624a6ee-1b10-4995-d058-1a4dab4b0184"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Student:\n",
+        "  def __init__(self,name,marks):\n",
+        "    self.name=name\n",
+        "    self.marks=marks\n",
+        "  def __gt__(self,a):\n",
+        "    return self.marks > a.marks\n",
+        "  def __lt__(self,a):\n",
+        "     return self.marks < a.marks\n",
+        "  def __le__(self,a):\n",
+        "    return self.marks  <= a.marks\n",
+        "  def __ge__(self,a):\n",
+        "    return self.marks >= a.marks\n",
+        "s1=Student(\"abhi\",100)\n",
+        "s2=Student(\"nitsih\",200)\n",
+        "print(s1>s2)#false\n",
+        "print(s1<s2)#True\n",
+        "print(s1<=s2)\n",
+        "print(s1>=s2)\n",
+        "\n",
+        "    \n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FQQsx2MO4-wB",
+        "outputId": "0cdacaf6-8174-483e-dffd-133a903accba"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "False\n",
+            "True\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#MRO\n",
+        "class A:pass\n",
+        "class B: pass\n",
+        "class C: pass\n",
+        "class D(A,B):pass\n",
+        "class E(B,C):pass\n",
+        "class F(D,E,C):pass\n",
+        "print(A.mro())  \n",
+        "print(B.mro())  \n",
+        "print(C.mro())  \n",
+        "print(D.mro())  \n",
+        "print(E.mro())  \n",
+        "print(F.mro())  \n",
+        "# [<class '__main__.F'>, <class '__main__.D'>, <class '__main__.A'>, <class '__main__.E'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>]"
+      ],
+      "metadata": {
+        "id": "BZARPNl-Ag8W",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1bedeca8-8ee7-476f-f9a9-915e37f4f9ee"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[<class '__main__.A'>, <class 'object'>]\n",
+            "[<class '__main__.B'>, <class 'object'>]\n",
+            "[<class '__main__.C'>, <class 'object'>]\n",
+            "[<class '__main__.D'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]\n",
+            "[<class '__main__.E'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>]\n",
+            "[<class '__main__.F'>, <class '__main__.D'>, <class '__main__.A'>, <class '__main__.E'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Rctangle:\n",
+        "   def __init__(self):\n",
+        "     self.length=5\n",
+        "     self.__breadth=3\n",
+        "\n",
+        "     print(self.length)\n",
+        "     print(self.__breadth)\n",
+        "   def show(self):\n",
+        "      print(\"THis is printing prib=vate variable is\",self.__breadth)\n",
+        "rect=Rctangle()\n",
+        "print(rect.length)\n",
+        "# print(rect.__breadth)\n"
+      ],
+      "metadata": {
+        "id": "AwhLS0JnvulF",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 283
+        },
+        "outputId": "9bff040b-c92e-4a90-edb5-32bda9af08f9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "3\n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "AttributeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-5-cede1403d2b1>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      8\u001b[0m    \u001b[0;32mdef\u001b[0m \u001b[0mshow\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      9\u001b[0m       \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"THis is printing prib=vate variable is\"\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m__breadth\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 10\u001b[0;31m \u001b[0mrect\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mRctangle\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m__breadth\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     11\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mrect\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlength\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     12\u001b[0m \u001b[0;31m# print(rect.__breadth)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mAttributeError\u001b[0m: 'Rctangle' object has no attribute '__breadth'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Phone:\n",
+        "  def __init__(self,brand,model,price):\n",
+        "    self.brand=brand\n",
+        "    self.model=model\n",
+        "    self.price=price\n",
+        "  def specs(self):\n",
+        "    return \"brand \",self.brand,\"price\",self.price\n",
+        "  def typeofphone(self):\n",
+        "    if self.price < 25000:\n",
+        "      return \"this is a budget phone\"\n",
+        "    else:\n",
+        "      return \"this is the high range phone\"\n",
+        "class Smartphone(Phone):\n",
+        "  def __init__(self,brand,model,price,ram,storage):\n",
+        "    super().__init__(brand,model,price)\n",
+        "    self.ram=ram\n",
+        "    self.storage=storage\n",
+        "class Flashipphone(Smartphone):\n",
+        "  def __init__(self, brand, model, price, ram, storage,frontcamera,backcamera,display):\n",
+        "    super().__init__(brand, model, price, ram, storage)\n",
+        "    self.frontcamera=frontcamera\n",
+        "    self.backcamera=backcamera\n",
+        "    self.diaplay=display\n",
+        "    \n"
+      ],
+      "metadata": {
+        "id": "hK-cCNDK_9uw"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "p1=Flashipphone(\"Ipphone-14 promax\",\"14promax\",2500000,12,\"1tb\",128,\"yes\",\"yes\")"
+      ],
+      "metadata": {
+        "id": "u5nG9S42BqYO"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "p1.typeofphone()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "qMkYc2CNCMaF",
+        "outputId": "a61d38de-f573-4a3c-b269-f4804adc1503"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'this is the high range phone'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    }
+  ]
+}
